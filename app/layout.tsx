@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Noto_Sans_Arabic } from 'next/font/google'
+import { BottomNav } from "@/components/ui/bottom-nav"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,14 +24,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="ar" dir="rtl" className={`${inter.variable} ${notoSansArabic.variable}`}>
-      <body>{children}</body>
+    <html lang="ar" dir="rtl">
+      <body>
+        {children}
+      </body>
     </html>
-)
+  )
 }
 
 
